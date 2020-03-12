@@ -26,7 +26,28 @@ let writeFile = (client) => {
     });
 }
 
+let findRecord = async(rut, email) => {
+    return new Promise((resolve, reject) => {
+        try {
+            let rawData = fs.readFileSync('src/data/clientsData.json')
+            jsonData = JSON.parse(rawData)
+            let client = jsonData.filter((item) => {
+                if (item.rut === rut) {
+                    return item
+                }
+                if (item.email === email) {
+                    return item
+                }
+            });
+            resolve(client)
+        } catch (err) {
+            reject(err)
+        }
+    });
+}
+
 module.exports = {
     readFile,
-    writeFile
+    writeFile,
+    findRecord
 }

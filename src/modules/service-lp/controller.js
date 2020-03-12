@@ -2,6 +2,7 @@ const fs = require('fs')
 const { get } = require('lodash')
 const { writeFile } = require('../../utli/utils')
 const { readFile } = require('../../utli/utils')
+const { findRecord } = require('../../utli/utils')
 
 module.exports = class LPController {
     constructor() {
@@ -20,11 +21,17 @@ module.exports = class LPController {
             'netSalary': netSalary
         }
 
-        writeFile(client).then(resp => {
-            res.status(200).send({ internalCode: 200, message: 'Insert OK', payload: resp })
-        }, (err) => {
-            res.status(200).send({ internalCode: 500, message: 'Internal server error', payload: err })
-        })
+        let jsonClient = await findRecord(rut, email)
+        console.log(`response busqueda ${JSON.stringify(jsonClient)}`);
+        if (Object.keys(jsonClient).length === 0) {
+            writeFile(client).then(resp => {
+                res.status(200).send({ internalCode: 200, message: 'Insert OK', payload: resp })
+            }, (err) => {
+                res.status(200).send({ internalCode: 500, message: 'Internal server error', payload: err })
+            })
+        } else {
+            res.status(200).send({ internalCode: 400, message: 'Duplicated account', payload: null })
+        }
     }
 
     async clients(req, res) {
