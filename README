@@ -11,7 +11,7 @@ Para desarrolladores, solo se necesita tener la versión 12 de nodejs y la versi
     $ cd cl-falabella-service-lp
     $ npm install
 
-## Ejecutar projecto
+## Ejecutar proyecto
 
     $ node app
 
