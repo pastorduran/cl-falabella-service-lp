@@ -7,8 +7,8 @@ Para desarrolladores, solo se necesita tener la versión 12 de nodejs y la versi
 
 ## Instalación
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
+    $ git clone https://github.com/pastorduran/cl-falabella-service-lp
+    $ cd cl-falabella-service-lp
     $ npm install
 
 ## Ejecutar projecto
