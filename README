@@ -1,0 +1,17 @@
+# CL-FALABELLA-SERVICE-LP
+API-REST para landing page de solicitud de cuenta corriente en Banco Falabella
+
+## Requisitos
+
+Para desarrolladores, solo se necesita tener la versión 12 de nodejs y la version y de npm instalados en tu pc
+
+## Instalación
+
+    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
+    $ cd PROJECT_TITLE
+    $ npm install
+
+## Ejecutar projecto
+
+    $ node app
+
