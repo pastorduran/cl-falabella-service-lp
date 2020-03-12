@@ -59,3 +59,47 @@ curl -H "Content-Type: application/json" -d "{ "rut" : "23241072-8", "email" : "
 ```
 { "internalCode": 400,  "message": "Duplicated account",  "payload": null}
 ```
+
+## 2. clients
+
+Este servicio obtiene la lista de cuentas de clientes registradas.
+
+* **Method:**
+   `
+   GET application/json
+   `
+
+* **Url:**
+```
+localhost:8080/cl/falabella/clients
+```
+
+* **Headers:**  
+ 1. **Content-Type:** application/json  
+ 
+* **Sample Request:**
+```
+curl -H "Content-Type: application/json" -X GET localhost:8080/cl/falabella/clients
+```
+
+* **Sample Response:**
+```
+{
+    "internalCode": 200,
+    "message": "succesfull",
+    "payload": [
+        {
+            "rut": "17123442-5",
+            "email": "johndoe@gmail.com",
+            "phone": "+56955555555",
+            "netSalary": 110000
+        },
+        {
+            "rut": "9122126-8",
+            "email": "richardroe@gmail.om",
+            "phone": "+56966666666",
+            "netSalary": 150000
+        }
+    ]
+}
+```
